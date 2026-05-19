@@ -1,0 +1,94 @@
+﻿using ConsoleApp31.Data;
+using ConsoleApp31.Data.Entities;
+using ConsoleApp31.Enums;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp31.Services
+{
+    public class TicketService
+    {
+        private TicketContext ticketContext;
+        public TicketService()
+        {
+            ticketContext = new TicketContext();
+        }
+        public async Task AddTicketAsync(Ticket ticket)
+        {
+            bool seatTaken = await ticketContext.Tickets
+                .AnyAsync(x => x.FlightId == ticket.FlightId &&
+                               x.SeatNumber == ticket.SeatNumber);
+
+            if (seatTaken)
+                throw new ArgumentException("Seat number is taken");
+
+            await ticketContext.Tickets.AddAsync(ticket);
+            await ticketContext.SaveChangesAsync();
+        }
+
+        public async Task<List<Ticket>> GetTicketsAsync()
+        {
+            var tickets = await ticketContext.Tickets
+                .Include(x => x.User)
+                .Include(x => x.Flight)
+                .ToListAsync();
+
+            if (tickets.Count == 0)
+                throw new ArgumentException("List is empty");
+
+            return tickets;
+        }
+
+        public async Task<Ticket> GetTicketAsync(int id)
+        {
+            var ticket = await ticketContext.Tickets
+                .Include(x => x.User)
+                .Include(x => x.Flight)
+                .FirstOrDefaultAsync(x => x.Id == id);
+
+            if (ticket == null)
+                throw new ArgumentException("No such ticket");
+
+            return ticket;
+        }
+
+        public async Task RemoveTicketAsync(int id)
+        {
+            var ticket = await GetTicketAsync(id);
+
+            ticketContext.Tickets.Remove(ticket);
+            await ticketContext.SaveChangesAsync();
+        }
+
+        public async Task<List<Ticket>> GetTicketsByUserIdAsync(int id)
+        {
+            return await ticketContext.Tickets
+                .Include(x => x.User)
+                .Include(x => x.Flight)
+                .Where(x => x.UserId == id)
+                .ToListAsync();
+        }
+
+        public async Task<List<Ticket>> GetTicketsByFlightIdAsync(int id)
+        {
+            return await ticketContext.Tickets
+                .Include(x => x.User)
+                .Include(x => x.Flight)
+                .Where(x => x.FlightId == id)
+                .ToListAsync();
+        }
+
+        public async Task<List<Ticket>> GetTicketsByClassAsync(TicketClass ticketClass)
+        {
+            return await ticketContext.Tickets
+                .Include(x => x.User)
+                .Include(x => x.Flight)
+                .Where(x => x.TicketClass == ticketClass)
+                .ToListAsync();
+        }
+    }
+}
