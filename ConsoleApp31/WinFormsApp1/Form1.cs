@@ -3,6 +3,7 @@ using ConsoleApp31.Data;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using ConsoleApp31.Services;
+using ConsoleApp31.Enums;
 
 namespace WinFormsApp1
 {
@@ -21,33 +22,29 @@ namespace WinFormsApp1
             {
                 MessageBox.Show("User added successfully!");
             }
+            textBox1.Clear(); textBox2.Clear();
         }
 
 
         private async void button1_Click(object sender, EventArgs e)
         {
             var userService = new UserService();
-            if (!await userService.LogIn(textBox1.Text, textBox2.Text))
+            var user =await userService.LogIn(textBox1.Text, textBox2.Text);
+            if (user==null )
             {
                 MessageBox.Show("Invalid credentials!"); return;
             }
-            TicketContext context = new TicketContext();
-            User user = await context.Users.FirstOrDefaultAsync(u => u.Password == textBox2.Text && u.Username == textBox1.Text);
-            if (user == null)
-            {
-                MessageBox.Show("User not found!");
-                return;
-            }
-            if (user.Role == 0)
+            if (user.Role == Role.Admin)
             {
                 AdminForm form3 = new AdminForm();
-                form3.ShowDialog();
+                form3.Show();
             }
             else
             {
-
+                CustomerForm form4 = new CustomerForm(user);
+                form4.Show();
             }
-
+            textBox1.Clear();textBox2.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)

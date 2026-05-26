@@ -43,7 +43,7 @@
             textBox2.Location = new Point(361, 143);
             textBox2.Name = "textBox2";
             textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(125, 27);
+            textBox2.Size = new Size(169, 27);
             textBox2.TabIndex = 11;
             textBox2.UseSystemPasswordChar = true;
             // 
@@ -96,7 +96,7 @@
             // 
             textBox3.Location = new Point(361, 202);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(200, 27);
+            textBox3.Size = new Size(169, 27);
             textBox3.TabIndex = 17;
             textBox3.UseSystemPasswordChar = true;
             // 

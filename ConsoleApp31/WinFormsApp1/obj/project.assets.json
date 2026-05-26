@@ -2820,11 +2820,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectUniqueName": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\WinFormsApp1.csproj",
       "projectName": "WinFormsApp1",
-      "projectPath": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\WinFormsApp1\\WinFormsApp1.csproj",
+      "projectPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\WinFormsApp1.csproj",
       "packagesPath": "C:\\Users\\11B_24\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\WinFormsApp1\\obj\\",
+      "outputPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\11B_24\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2842,8 +2842,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {
-              "projectPath": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj"
+            "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {
+              "projectPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj"
             }
           }
         }
@@ -2884,5 +2884,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

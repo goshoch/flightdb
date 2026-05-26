@@ -69,6 +69,9 @@ namespace ConsoleApp31.Services
             return await ticketContext.Tickets
                 .Include(x => x.User)
                 .Include(x => x.Flight)
+                .ThenInclude(x=>x.DepartureAirport)
+                .Include(x=>x.Flight)
+                .ThenInclude(x=>x.ArrivalAirport)
                 .Where(x => x.UserId == id)
                 .ToListAsync();
         }

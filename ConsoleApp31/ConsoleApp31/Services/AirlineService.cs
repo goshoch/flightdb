@@ -26,8 +26,7 @@ namespace ConsoleApp31.Services
         {
             var airlines = await ticketContext.Airlines.ToListAsync();
 
-            if (airlines.Count == 0)
-                throw new ArgumentException("List is empty");
+            if (airlines.Count == 0) airlines=new List<Airline>();
 
             return airlines;
         }

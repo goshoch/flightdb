@@ -14,5 +14,9 @@ namespace ConsoleApp31.Data.Entities
         public string Country { get; set; }
         public ICollection<Flight> DepartingFlights { get;set; }
         public ICollection<Flight> ArrivingFlights { get;set; }
+        public override string ToString()
+        {
+            return $"{Name} - {Country}";
+        }
     }
 }

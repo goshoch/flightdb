@@ -14,5 +14,9 @@ namespace ConsoleApp31.Data.Entities
         public string Password { get; set; }
         public Role Role { get; set; }
         public ICollection<Ticket> Tickets=new List<Ticket>();
+        public override string ToString()
+        {
+            return $"{Username} - {Role}";
+        }
     }
 }

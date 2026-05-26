@@ -12,18 +12,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using ConsoleApp31.Data;
 using ConsoleApp31.Data.Entities;
 using ConsoleApp31.Enums;
+using ConsoleApp31.Services;
 
 namespace WinFormsApp1
 {
     public partial class Form2 : Form
     {
-        private TicketContext context = new TicketContext();
+        private UserService userService = new UserService();
         public Form2()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             if (textBox2.Text != textBox3.Text)
             {
@@ -35,10 +36,14 @@ namespace WinFormsApp1
                 MessageBox.Show("Please fill in all fields!");
                 return;
             }
-
-            User customer = new User() { Password = textBox1.Text, Username = textBox2.Text, Role = Role.Customer };
-            context.Users.Add(customer);
-            context.SaveChanges();
+            var users=await userService.GetUsersAsync();
+            if (users.Any(x=>x.Username==textBox1.Text))
+            {
+                MessageBox.Show("User already exists!");
+                return;
+            }
+            User customer = new User() { Username = textBox1.Text, Password = textBox2.Text, Role = Role.Customer };
+            await userService.AddUserAsync(customer);
             DialogResult = DialogResult.OK;
         }
 
@@ -49,8 +54,6 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
             this.Hide();
         }
     }

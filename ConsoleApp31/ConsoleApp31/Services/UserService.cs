@@ -18,12 +18,12 @@ namespace ConsoleApp31.Services
             ticketContext=new TicketContext();
            
         }
-        public async Task<bool> LogIn(string name, string password)
+        public async Task<User> LogIn(string name, string password)
         {
             var user = await ticketContext.Users.FirstOrDefaultAsync(u => u.Username == name && u.Password == password);
-            return user != null;
+            return user;
         }
-        async Task AddUserAsync(User User)
+        public async Task AddUserAsync(User User)
         {
             await ticketContext.Users.AddAsync(User);
             await ticketContext.SaveChangesAsync();
@@ -33,8 +33,7 @@ namespace ConsoleApp31.Services
         {
             var Users = await ticketContext.Users.ToListAsync();
 
-            if (Users.Count == 0)
-                throw new ArgumentException("List is empty");
+            if (Users.Count == 0) return new List<User>();
 
             return Users;
         }

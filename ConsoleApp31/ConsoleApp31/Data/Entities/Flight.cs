@@ -20,5 +20,9 @@ namespace ConsoleApp31.Data.Entities
         public Airport ArrivalAirport { get; set; }
         public Airline Airline { get; set; }
         public ICollection<Ticket> Tickets { get; set; }
+        public override string ToString()
+        {
+            return $"{FlightNumber} {DepartureAirport.Name} - {ArrivalAirport.Name}";
+        }
     }
 }

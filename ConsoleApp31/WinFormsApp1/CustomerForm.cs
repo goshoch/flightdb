@@ -16,10 +16,10 @@ namespace WinFormsApp1
 {
     public partial class CustomerForm : Form
     {
-        private readonly TicketService ticketService;
-        private readonly FlightService flightService;
-        private readonly TicketContext context;
-        private readonly User currentUser;
+        private readonly TicketService ticketService=new TicketService();
+        private readonly FlightService flightService=new FlightService();
+        private readonly TicketContext context=new TicketContext();
+        private User currentUser;
         private List<Ticket> ticketlist;
         private List<Flight> flightlist;
         public CustomerForm(User user)
@@ -43,7 +43,7 @@ namespace WinFormsApp1
                 Airline = p.Airline.Name,
                 p.Price
             }).ToList();
-
+            dataGridView1.Columns["Id"].Visible = false;
             var addToCartButtonColumn = new DataGridViewButtonColumn();
             addToCartButtonColumn.Name = "addToCartButtonColumn";
             addToCartButtonColumn.HeaderText = "Add to Cart";
@@ -59,14 +59,13 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
             this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            TicketViewForm form= new TicketViewForm(currentUser);
+            form.Show();
         }
 
         private async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)

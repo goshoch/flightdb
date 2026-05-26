@@ -1,14 +1,14 @@
-{
+[
   {
     "Id": 1,
     "Username": "admin",
     "Password": "1234",
-    "Role": "Admin"
+    "Role": 0
   },
   {
     "Id": 2,
     "Username": "gosho",
     "Password": "12345",
-    "Role": "Admin"
+    "Role": 0
   }
-}
+]

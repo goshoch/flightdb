@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace ConsoleApp31.Data
@@ -24,13 +25,20 @@ namespace ConsoleApp31.Data
         {
             const string filePath = "admins.json";
             string json = File.ReadAllText(filePath);
-            Users.AddRange(JsonSerializer.Deserialize<List<User>>(json));
-            modelBuilder.Entity<User>(entity =>
+            var options = new JsonSerializerOptions
             {
-                entity.HasKey(x => x.Id);
-                entity.HasIndex(x => x.Username).IsUnique();
-                entity.Property(x => x.Role).HasConversion<string>().HasMaxLength(20).IsRequired();
-            });
+                Converters = { new JsonStringEnumConverter() }
+            };
+
+            var users = JsonSerializer.Deserialize<List<User>>(json, options);
+            modelBuilder.Entity<User>(entity =>
+                {
+                    entity.HasKey(x => x.Id);
+                    entity.HasIndex(x => x.Username).IsUnique();
+                    entity.Property(x => x.Role).HasConversion<string>().HasMaxLength(20).IsRequired();
+                    entity.HasData(users);
+
+                });
             modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.HasKey(x => x.Id);
@@ -46,7 +54,7 @@ namespace ConsoleApp31.Data
                 entity.Property(x => x.ArrivalTime).IsRequired();
                 entity.Property(x => x.Price).IsRequired().HasColumnType("decimal(7,2)");
                 entity.HasOne(x => x.DepartureAirport).WithMany(x => x.DepartingFlights).HasForeignKey(x => x.DepartureAirportId).OnDelete(DeleteBehavior.Cascade);
-                entity.HasOne(x => x.ArrivalAirport).WithMany(x => x.ArrivingFlights).HasForeignKey(x => x.ArrivalAirportId).OnDelete(DeleteBehavior.Cascade);
+                entity.HasOne(x => x.ArrivalAirport).WithMany(x => x.ArrivingFlights).HasForeignKey(x => x.ArrivalAirportId).OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(x => x.Airline).WithMany(x => x.Flights).HasForeignKey(x => x.AirlineId).OnDelete(DeleteBehavior.Cascade);
                 entity.HasIndex(x => x.FlightNumber).IsUnique();
                 entity.ToTable(t => t.HasCheckConstraint("CK_Flight_Price", "[Price]>0"));

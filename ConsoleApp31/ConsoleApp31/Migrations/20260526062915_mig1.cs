@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace ConsoleApp31.Migrations
 {
     /// <inheritdoc />
-    public partial class migration1 : Migration
+    public partial class mig1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,9 +48,9 @@ namespace ConsoleApp31.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(80)", maxLength: 80, nullable: false)
+                    Username = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Role = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,19 +82,18 @@ namespace ConsoleApp31.Migrations
                         column: x => x.AirlineId,
                         principalTable: "Airlines",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Flights_Airports_ArrivalAirportId",
                         column: x => x.ArrivalAirportId,
                         principalTable: "Airports",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Flights_Airports_DepartureAirportId",
                         column: x => x.DepartureAirportId,
                         principalTable: "Airports",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,35 +105,39 @@ namespace ConsoleApp31.Migrations
                     SeatNumber = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
                     TicketClass = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    FlightId = table.Column<int>(type: "int", nullable: false)
+                    FlightId = table.Column<int>(type: "int", nullable: false),
+                    Price = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Tickets", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tickets_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
                         name: "FK_Tickets_Flights_FlightId",
                         column: x => x.FlightId,
                         principalTable: "Flights",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Tickets_Users_UserId",
+                        column: x => x.UserId,
+                        principalTable: "Users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                columns: new[] { "Id", "Password", "Role", "Username" },
+                values: new object[,]
+                {
+                    { 1, "1234", "Admin", "admin" },
+                    { 2, "12345", "Admin", "gosho" }
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Airlines_Name",
                 table: "Airlines",
                 column: "Name",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_Email",
-                table: "Users",
-                column: "Email",
                 unique: true);
 
             migrationBuilder.CreateIndex(
@@ -157,14 +162,20 @@ namespace ConsoleApp31.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Tickets_FlightId",
+                table: "Tickets",
+                column: "FlightId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tickets_UserId",
                 table: "Tickets",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tickets_FlightId",
-                table: "Tickets",
-                column: "FlightId");
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -174,10 +185,10 @@ namespace ConsoleApp31.Migrations
                 name: "Tickets");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Flights");
 
             migrationBuilder.DropTable(
-                name: "Flights");
+                name: "Users");
 
             migrationBuilder.DropTable(
                 name: "Airlines");

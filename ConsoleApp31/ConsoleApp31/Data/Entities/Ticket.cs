@@ -17,5 +17,9 @@ namespace ConsoleApp31.Data.Entities
         public decimal? Price { get; set; }
         public User User { get; set; }  
         public Flight Flight { get; set; }
+        public override string ToString()
+        {
+            return $"{SeatNumber} - {User.Username} - {Flight.FlightNumber}";
+        }
     }
 }

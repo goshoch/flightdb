@@ -81,39 +81,6 @@ namespace ConsoleApp31.Migrations
                     b.ToTable("Airports");
                 });
 
-            modelBuilder.Entity("ConsoleApp31.Data.Entities.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(80)
-                        .HasColumnType("nvarchar(80)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(true)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(30)
-                        .IsUnicode(true)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Email")
-                        .IsUnique();
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("ConsoleApp31.Data.Entities.Flight", b =>
                 {
                     b.Property<int>("Id")
@@ -174,11 +141,11 @@ namespace ConsoleApp31.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<int>("FlightId")
                         .HasColumnType("int");
+
+                    b.Property<decimal?>("Price")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("SeatNumber")
                         .IsRequired()
@@ -189,13 +156,61 @@ namespace ConsoleApp31.Migrations
                     b.Property<int>("TicketClass")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("UserId");
+                    b.HasKey("Id");
 
                     b.HasIndex("FlightId");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Tickets");
+                });
+
+            modelBuilder.Entity("ConsoleApp31.Data.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Username")
+                        .IsUnique();
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Password = "1234",
+                            Role = "Admin",
+                            Username = "admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Password = "12345",
+                            Role = "Admin",
+                            Username = "gosho"
+                        });
                 });
 
             modelBuilder.Entity("ConsoleApp31.Data.Entities.Flight", b =>
@@ -203,19 +218,19 @@ namespace ConsoleApp31.Migrations
                     b.HasOne("ConsoleApp31.Data.Entities.Airline", "Airline")
                         .WithMany("Flights")
                         .HasForeignKey("AirlineId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("ConsoleApp31.Data.Entities.Airport", "ArrivalAirport")
                         .WithMany("ArrivingFlights")
                         .HasForeignKey("ArrivalAirportId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.HasOne("ConsoleApp31.Data.Entities.Airport", "DepartureAirport")
                         .WithMany("DepartingFlights")
                         .HasForeignKey("DepartureAirportId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Airline");
@@ -227,21 +242,21 @@ namespace ConsoleApp31.Migrations
 
             modelBuilder.Entity("ConsoleApp31.Data.Entities.Ticket", b =>
                 {
-                    b.HasOne("ConsoleApp31.Data.Entities.User", "User")
-                        .WithMany("Tickets")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("ConsoleApp31.Data.Entities.Flight", "Flight")
                         .WithMany("Tickets")
                         .HasForeignKey("FlightId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("ConsoleApp31.Data.Entities.User", "User")
+                        .WithMany("Tickets")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Flight");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ConsoleApp31.Data.Entities.Airline", b =>
@@ -256,12 +271,12 @@ namespace ConsoleApp31.Migrations
                     b.Navigation("DepartingFlights");
                 });
 
-            modelBuilder.Entity("ConsoleApp31.Data.Entities.User", b =>
+            modelBuilder.Entity("ConsoleApp31.Data.Entities.Flight", b =>
                 {
                     b.Navigation("Tickets");
                 });
 
-            modelBuilder.Entity("ConsoleApp31.Data.Entities.Flight", b =>
+            modelBuilder.Entity("ConsoleApp31.Data.Entities.User", b =>
                 {
                     b.Navigation("Tickets");
                 });

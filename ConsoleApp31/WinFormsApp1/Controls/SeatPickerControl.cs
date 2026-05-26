@@ -31,42 +31,67 @@ namespace WinFormsApp1.Controls
         {
             panelSeats.Controls.Clear();
 
-            int columnsBeforeGap = 3;
+            // Group seats by row number (1,2,3...)
+            var groupedSeats = seats
+                .GroupBy(s =>
+                    int.Parse(new string(
+                        s.SeatNumber.TakeWhile(char.IsDigit).ToArray())))
+                .OrderBy(g => g.Key);
 
-            int index = 0;
+            int visualRow = 0;
 
-            foreach (Seat seat in seats)
+            foreach (var rowGroup in groupedSeats)
             {
-                Button btn = new Button();
+                // 🔥 First row only shows 4 seats
+                int colsInRow = rowGroup.Key == 1 ? 4 : 6;
 
-                btn.Width = 45;
-                btn.Height = 45;
+                int panelWidth = panelSeats.Width;
+                int rowWidth = colsInRow * 50;
 
-                btn.Text = seat.SeatNumber;
-                btn.Tag = seat;
+                // Center the row
+                int startX = (panelWidth - rowWidth) / 2;
 
-                int row = index / 6;
-                int col = index % 6;
+                // Extra spacing between cabin sections
+                int extraGap = 0;
 
-                int gap = col >= columnsBeforeGap ? 30 : 0;
+                if (visualRow >= 1)
+                    extraGap += 15;
 
-                btn.Left = 20 + (col * 50) + gap;
-                btn.Top = 20 + (row * 50);
+                if (visualRow >= 3)
+                    extraGap += 15;
 
-                if (seat.IsTaken)
+                int col = 0;
+
+                foreach (Seat seat in rowGroup.Take(colsInRow))
                 {
-                    btn.BackColor = Color.Red;
-                    btn.Enabled = false;
-                }
-                else
-                {
-                    btn.BackColor = Color.LightGreen;
-                    btn.Click += Seat_Click;
+                    Button btn = new Button();
+
+                    btn.Width = 45;
+                    btn.Height = 45;
+
+                    btn.Text = seat.SeatNumber;
+                    btn.Tag = seat;
+
+                    btn.Left = startX + (col * 50);
+                    btn.Top = 20 + (visualRow * 50) + extraGap;
+
+                    if (seat.IsTaken)
+                    {
+                        btn.BackColor = Color.Red;
+                        btn.Enabled = false;
+                    }
+                    else
+                    {
+                        btn.BackColor = Color.LightGreen;
+                        btn.Click += Seat_Click;
+                    }
+
+                    panelSeats.Controls.Add(btn);
+
+                    col++;
                 }
 
-                panelSeats.Controls.Add(btn);
-
-                index++;
+                visualRow++;
             }
         }
 

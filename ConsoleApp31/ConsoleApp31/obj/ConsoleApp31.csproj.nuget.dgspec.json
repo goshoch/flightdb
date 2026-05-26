@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {}
+    "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {}
   },
   "projects": {
-    "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {
+    "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj",
+        "projectUniqueName": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj",
         "projectName": "ConsoleApp31",
-        "projectPath": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj",
+        "projectPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\ConsoleApp31.csproj",
         "packagesPath": "C:\\Users\\11B_24\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\11B_24\\source\\repos\\ConsoleApp31\\ConsoleApp31\\obj\\",
+        "outputPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\11B_24\\AppData\\Roaming\\NuGet\\NuGet.Config",

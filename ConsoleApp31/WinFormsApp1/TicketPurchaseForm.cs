@@ -15,7 +15,7 @@ namespace WinFormsApp1
 {
     public partial class TicketPurchaseForm : Form
     {
-        private readonly SeatService seatService;
+        private readonly SeatService seatService=new SeatService();
         public Flight Flight { get; set; }
         public User Customer { get; set; }
         private readonly TicketService ticketService = new TicketService();
@@ -74,8 +74,6 @@ namespace WinFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CustomerForm form = new CustomerForm(Customer);
-            form.Show();
             this.Hide();
         }
     }

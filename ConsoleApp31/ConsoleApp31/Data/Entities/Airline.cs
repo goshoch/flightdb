@@ -12,5 +12,9 @@ namespace ConsoleApp31.Data.Entities
         public string Name { get; set; }
         public string Country { get; set; }
         public ICollection<Flight> Flights { get; set; }
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }

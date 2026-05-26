@@ -23,6 +23,8 @@ namespace ConsoleApp31.Services
         }
         public async Task AddFlightAsync(Flight flight)
         {
+            if (flight.ArrivalTime < flight.DepartureTime) { throw new ArgumentException("Arrival time cannot be before departure time"); }
+            if (flight.DepartureAirportId == flight.ArrivalAirportId) { throw new ArgumentException("Cannot fly to the same airport"); }
             await ticketContext.Flights.AddAsync(flight);
             await ticketContext.SaveChangesAsync();
         }
