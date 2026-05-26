@@ -1,4 +1,5 @@
 ﻿using ConsoleApp31.Data.Entities;
+using ConsoleApp31.Enums;
 using ConsoleApp31.Services;
 using Microsoft.VisualBasic.Logging;
 using System;
@@ -31,6 +32,7 @@ namespace WinFormsApp1
             dataGridView1.Columns.Add("To", "To");
             dataGridView1.Columns.Add("Price", "Price");
             dataGridView1.Columns.Add("Seat", "Seat");
+            dataGridView1.Columns.Add("Class", "Class");
             LoadTickets();
 
         }
@@ -46,8 +48,9 @@ namespace WinFormsApp1
                     t.Flight.FlightNumber,
                     t.Flight.DepartureAirport.Name,
                     t.Flight.ArrivalAirport.Name,
-                    t.Flight.Price,
-                    t.SeatNumber
+                    t.Price,
+                    t.SeatNumber,
+                    t.TicketClass
                 );
             }
         }

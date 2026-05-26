@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\ticketpurchaseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ticketpurchaseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\controls\\seatpickercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\controls\\seatpickercontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,11 +19,7 @@
       "RelativeMoniker": "D:0:0:{DC3FC923-2351-4CFE-9BD4-97269C2D2CB4}|ConsoleApp31\\ConsoleApp31.csproj|solutionrelative:consoleapp31\\services\\ticketservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ticketviewform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\winformsapp1\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\customerform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|c:\\users\\11b_24\\source\\repos\\flightdb\\consoleapp31\\winformsapp1\\ticketpurchaseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|solutionrelative:winformsapp1\\ticketpurchaseform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F7107673-65F4-4432-BA4E-00F023C7290B}|WinFormsApp1\\WinFormsApp1.csproj|C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\winformsapp1\\cartform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -130,11 +130,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "TicketService.cs",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\ConsoleApp31\\Services\\TicketService.cs",
               "RelativeDocumentMoniker": "ConsoleApp31\\Services\\TicketService.cs",
@@ -142,75 +142,72 @@
               "RelativeToolTip": "ConsoleApp31\\Services\\TicketService.cs",
               "ViewState": "AgIAAEIAAAAAAAAAAAAowEsAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T08:10:14.828Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T08:10:14.828Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TicketViewForm.cs",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketViewForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\TicketViewForm.cs",
-              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketViewForm.cs",
-              "RelativeToolTip": "WinFormsApp1\\TicketViewForm.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAMwDwAAAAYAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketViewForm.cs*",
+              "RelativeToolTip": "WinFormsApp1\\TicketViewForm.cs*",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-26T08:07:49.584Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TicketViewForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketViewForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\TicketViewForm.cs",
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketViewForm.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\TicketViewForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T08:04:30.224Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-26T08:04:30.224Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SeatPickerControl.cs",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Controls\\SeatPickerControl.cs",
-              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs*",
-              "RelativeToolTip": "WinFormsApp1\\Controls\\SeatPickerControl.cs*",
-              "ViewState": "AgIAACUAAAAAAAAAAAAuwF8AAAAJAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs",
+              "RelativeToolTip": "WinFormsApp1\\Controls\\SeatPickerControl.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwF8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T06:19:29.401Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
               "Title": "TicketPurchaseForm.cs",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketPurchaseForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\TicketPurchaseForm.cs",
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketPurchaseForm.cs",
               "RelativeToolTip": "WinFormsApp1\\TicketPurchaseForm.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAqwCAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-19T06:35:33.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CustomerForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\CustomerForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\CustomerForm.cs",
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\CustomerForm.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\CustomerForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T11:59:55.12Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-18T11:59:55.12Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CustomerForm.cs",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\CustomerForm.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\CustomerForm.cs",
@@ -218,8 +215,7 @@
               "RelativeToolTip": "WinFormsApp1\\CustomerForm.cs",
               "ViewState": "AgIAACUAAAAAAAAAAAD4v0MAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T05:21:26.111Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T05:21:26.111Z"
             },
             {
               "$type": "Document",
@@ -231,8 +227,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\Entities\\Flight.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T05:22:04.806Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T05:22:04.806Z"
             },
             {
               "$type": "Document",
@@ -243,8 +238,7 @@
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\CartForm.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\CartForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T05:26:40.109Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-19T05:26:40.109Z"
             },
             {
               "$type": "Document",
@@ -256,8 +250,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\TicketContext.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAuwDgAAACeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T07:13:41.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T07:13:41.141Z"
             },
             {
               "$type": "Document",
@@ -265,11 +258,10 @@
               "Title": "SeatPickerControl.cs [Design]",
               "DocumentMoniker": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs",
               "RelativeDocumentMoniker": "WinFormsApp1\\Controls\\SeatPickerControl.cs",
-              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs [Design]*",
-              "RelativeToolTip": "WinFormsApp1\\Controls\\SeatPickerControl.cs [Design]*",
+              "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Controls\\SeatPickerControl.cs [Design]",
+              "RelativeToolTip": "WinFormsApp1\\Controls\\SeatPickerControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T08:00:38.035Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-19T08:00:38.035Z"
             },
             {
               "$type": "Document",
@@ -281,8 +273,7 @@
               "RelativeToolTip": "ConsoleApp31\\Services\\UserService.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAD4vxQAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T07:14:59.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T07:14:59.515Z"
             },
             {
               "$type": "Document",
@@ -307,8 +298,7 @@
               "RelativeToolTip": "ConsoleApp31\\Services\\AirportService.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAxwBIAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T05:52:21.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T05:52:21.239Z"
             },
             {
               "$type": "Document",
@@ -319,8 +309,7 @@
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\AdminForm.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\AdminForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T11:22:26.313Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-18T11:22:26.313Z"
             },
             {
               "$type": "Document",
@@ -332,8 +321,7 @@
               "RelativeToolTip": "ConsoleApp31\\Services\\FlightService.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAIAwwBEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T05:41:12.163Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T05:41:12.163Z"
             },
             {
               "$type": "Document",
@@ -345,8 +333,7 @@
               "RelativeToolTip": "ConsoleApp31\\admins.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-05-19T07:32:01.943Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T07:32:01.943Z"
             },
             {
               "$type": "Document",
@@ -370,8 +357,7 @@
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Form2.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T10:36:28.085Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-18T10:36:28.085Z"
             },
             {
               "$type": "Document",
@@ -396,8 +382,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\Entities\\Airline.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-21T05:50:14.477Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-21T05:50:14.477Z"
             },
             {
               "$type": "Document",
@@ -408,8 +393,7 @@
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\Form1.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T10:33:22.843Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-18T10:33:22.843Z"
             },
             {
               "$type": "Document",
@@ -421,8 +405,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\Entities\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T10:44:15.855Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T10:44:15.855Z"
             },
             {
               "$type": "Document",
@@ -434,8 +417,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\Entities\\Airport.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T07:01:12.316Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T07:01:12.316Z"
             },
             {
               "$type": "Document",
@@ -447,8 +429,7 @@
               "RelativeToolTip": "ConsoleApp31\\Data\\Entities\\Ticket.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T07:03:31.345Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T07:03:31.345Z"
             },
             {
               "$type": "Document",
@@ -460,8 +441,7 @@
               "RelativeToolTip": "ConsoleApp31\\Services\\AirlineService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-26T06:48:16.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-26T06:48:16.814Z"
             },
             {
               "$type": "Document",
@@ -485,8 +465,7 @@
               "RelativeToolTip": "ConsoleApp31\\Enums\\Role.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T07:20:18.057Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-19T07:20:18.057Z"
             },
             {
               "$type": "Document",
@@ -497,8 +476,7 @@
               "ToolTip": "C:\\Users\\11B_24\\source\\repos\\flightdb\\ConsoleApp31\\WinFormsApp1\\TicketPurchaseForm.cs [Design]",
               "RelativeToolTip": "WinFormsApp1\\TicketPurchaseForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T05:53:00.254Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-05-19T05:53:00.254Z"
             },
             {
               "$type": "Document",
