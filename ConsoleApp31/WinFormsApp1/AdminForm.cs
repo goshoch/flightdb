@@ -29,9 +29,20 @@ namespace WinFormsApp1
         }
         private async void AdminForm_Load(object sender, EventArgs e)
         {
+            await RefreshAdminDataAsync();
+        }
+
+        private async Task RefreshAdminDataAsync()
+        {
+            await RefreshAirportsAsync();
+            await RefreshAirlinesAsync();
+            await RefreshFlightsAsync();
+            await RefreshUsersAsync();
+        }
+
+        private async Task RefreshAirportsAsync()
+        {
             var airports = await airportService.GetAirportsAsync();
-            var airlines = await airlineService.GetAirlinesAsync();
-            var users = await userService.GetUsersAsync();
 
             comboBox1.DataSource = airports;
             comboBox1.ValueMember = "Id";
@@ -43,10 +54,42 @@ namespace WinFormsApp1
 
             comboBox1.BindingContext = new BindingContext();
             comboBox2.BindingContext = new BindingContext();
+
+            comboBox7.DataSource = airports.ToList();
+            comboBox7.ValueMember = "Id";
+            comboBox7.DisplayMember = "Name";
+        }
+
+        private async Task RefreshAirlinesAsync()
+        {
+            var airlines = await airlineService.GetAirlinesAsync();
+
             comboBox3.DataSource = airlines;
             comboBox3.ValueMember = "Id";
             comboBox3.DisplayMember = "Name";
 
+            comboBox6.DataSource = airlines.ToList();
+            comboBox6.ValueMember = "Id";
+            comboBox6.DisplayMember = "Name";
+        }
+
+        private async Task RefreshFlightsAsync()
+        {
+            try
+            {
+                comboBox5.DataSource = await flightService.GetFlightsAsync();
+                comboBox5.ValueMember = "Id";
+                comboBox5.DisplayMember = "FlightNumber";
+            }
+            catch (ArgumentException)
+            {
+                comboBox5.DataSource = new List<Flight>();
+            }
+        }
+
+        private async Task RefreshUsersAsync()
+        {
+            var users = await userService.GetUsersAsync();
             comboBox4.DataSource = users;
         }
 
@@ -70,7 +113,7 @@ namespace WinFormsApp1
             }
             await userService.RemoveUserAsync(user.Id);
             MessageBox.Show("User deleted successfully");
-            comboBox4.DataSource = await userService.GetUsersAsync();
+            await RefreshUsersAsync();
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -80,10 +123,7 @@ namespace WinFormsApp1
             await airlineService.AddAirlineAsync(airline);
             MessageBox.Show("Airline added!");
             textBox3.Clear(); textBox4.Clear();
-            var airlines= await airlineService.GetAirlinesAsync();
-            comboBox3.DataSource =airlines;
-            comboBox3.ValueMember = "Id";
-            comboBox3.DisplayMember = "Name";
+            await RefreshAirlinesAsync();
 
         }
 
@@ -98,17 +138,7 @@ namespace WinFormsApp1
             await airportService.AddAirportAsync(airport);
             MessageBox.Show("Airport added!");
             textBox5.Clear(); textBox6.Clear(); textBox7.Clear();
-            var airports = await airportService.GetAirportsAsync();
-            comboBox1.DataSource = airports;
-            comboBox1.ValueMember = "Id";
-            comboBox1.DisplayMember = "Name";
-
-            comboBox2.DataSource = airports;
-            comboBox2.ValueMember = "Id";
-            comboBox2.DisplayMember = "Name";
-
-            comboBox1.BindingContext = new BindingContext();
-            comboBox2.BindingContext = new BindingContext();
+            await RefreshAirportsAsync();
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -135,12 +165,87 @@ namespace WinFormsApp1
             catch (Exception ex) { MessageBox.Show(ex.ToString()); return; }
             MessageBox.Show("Flight added");
             textBox1.Clear(); textBox2.Clear(); textBox8.Clear(); textBox9.Clear();
+            await RefreshFlightsAsync();
 
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private async void button10_Click(object sender, EventArgs e)
+        {
+            if (comboBox5.SelectedItem == null)
+            {
+                MessageBox.Show("Select a flight");
+                return;
+            }
+
+            Flight flight = (Flight)comboBox5.SelectedItem;
+
+            try
+            {
+                await flightService.RemoveFlightAsync(flight.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            MessageBox.Show("Flight deleted successfully");
+            await RefreshFlightsAsync();
+        }
+
+        private async void button12_Click(object sender, EventArgs e)
+        {
+            if (comboBox6.SelectedItem == null)
+            {
+                MessageBox.Show("Select an airline");
+                return;
+            }
+
+            Airline airline = (Airline)comboBox6.SelectedItem;
+
+            try
+            {
+                await airlineService.RemoveAirlineAsync(airline.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            MessageBox.Show("Airline deleted successfully");
+            await RefreshAirlinesAsync();
+            await RefreshFlightsAsync();
+        }
+
+        private async void button14_Click(object sender, EventArgs e)
+        {
+            if (comboBox7.SelectedItem == null)
+            {
+                MessageBox.Show("Select an airport");
+                return;
+            }
+
+            Airport airport = (Airport)comboBox7.SelectedItem;
+
+            try
+            {
+                await airportService.RemoveAirportAsync(airport.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+            MessageBox.Show("Airport deleted successfully");
+            await RefreshAirportsAsync();
+            await RefreshFlightsAsync();
         }
     }
 }

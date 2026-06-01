@@ -66,11 +66,30 @@
             button8 = new Button();
             button4 = new Button();
             comboBox4 = new ComboBox();
+            tabPage5 = new TabPage();
+            button9 = new Button();
+            button10 = new Button();
+            comboBox5 = new ComboBox();
+            label13 = new Label();
+            tabPage6 = new TabPage();
+            button11 = new Button();
+            button12 = new Button();
+            comboBox6 = new ComboBox();
+            label14 = new Label();
+            tabPage7 = new TabPage();
+            button13 = new Button();
+            button14 = new Button();
+            comboBox7 = new ComboBox();
+            label15 = new Label();
+            label16 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
+            tabPage5.SuspendLayout();
+            tabPage6.SuspendLayout();
+            tabPage7.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
@@ -79,6 +98,9 @@
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
             tabControl1.Controls.Add(tabPage4);
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Controls.Add(tabPage6);
+            tabControl1.Controls.Add(tabPage7);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
@@ -404,6 +426,7 @@
             // tabPage4
             // 
             tabPage4.BackColor = Color.LightSkyBlue;
+            tabPage4.Controls.Add(label16);
             tabPage4.Controls.Add(button8);
             tabPage4.Controls.Add(button4);
             tabPage4.Controls.Add(comboBox4);
@@ -441,6 +464,165 @@
             comboBox4.Size = new Size(204, 28);
             comboBox4.TabIndex = 0;
             // 
+            // tabPage5
+            // 
+            tabPage5.BackColor = Color.LightSkyBlue;
+            tabPage5.Controls.Add(button9);
+            tabPage5.Controls.Add(button10);
+            tabPage5.Controls.Add(comboBox5);
+            tabPage5.Controls.Add(label13);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Size = new Size(792, 417);
+            tabPage5.TabIndex = 4;
+            tabPage5.Text = "Delete Flights";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(626, 353);
+            button9.Name = "button9";
+            button9.Size = new Size(94, 29);
+            button9.TabIndex = 3;
+            button9.Text = "Log out";
+            button9.UseVisualStyleBackColor = true;
+            button9.Click += button5_Click;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(289, 284);
+            button10.Name = "button10";
+            button10.Size = new Size(94, 29);
+            button10.TabIndex = 2;
+            button10.Text = "Delete";
+            button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
+            // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Location = new Point(230, 69);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(260, 28);
+            comboBox5.TabIndex = 1;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(73, 72);
+            label13.Name = "label13";
+            label13.Size = new Size(88, 20);
+            label13.TabIndex = 0;
+            label13.Text = "Select flight";
+            // 
+            // tabPage6
+            // 
+            tabPage6.BackColor = Color.LightSkyBlue;
+            tabPage6.Controls.Add(button11);
+            tabPage6.Controls.Add(button12);
+            tabPage6.Controls.Add(comboBox6);
+            tabPage6.Controls.Add(label14);
+            tabPage6.Location = new Point(4, 29);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Size = new Size(792, 417);
+            tabPage6.TabIndex = 5;
+            tabPage6.Text = "Delete Airlines";
+            // 
+            // button11
+            // 
+            button11.Location = new Point(626, 353);
+            button11.Name = "button11";
+            button11.Size = new Size(94, 29);
+            button11.TabIndex = 3;
+            button11.Text = "Log out";
+            button11.UseVisualStyleBackColor = true;
+            button11.Click += button5_Click;
+            // 
+            // button12
+            // 
+            button12.Location = new Point(289, 284);
+            button12.Name = "button12";
+            button12.Size = new Size(94, 29);
+            button12.TabIndex = 2;
+            button12.Text = "Delete";
+            button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
+            // 
+            // comboBox6
+            // 
+            comboBox6.FormattingEnabled = true;
+            comboBox6.Location = new Point(230, 69);
+            comboBox6.Name = "comboBox6";
+            comboBox6.Size = new Size(260, 28);
+            comboBox6.TabIndex = 1;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(73, 72);
+            label14.Name = "label14";
+            label14.Size = new Size(94, 20);
+            label14.TabIndex = 0;
+            label14.Text = "Select airline";
+            // 
+            // tabPage7
+            // 
+            tabPage7.BackColor = Color.LightSkyBlue;
+            tabPage7.Controls.Add(button13);
+            tabPage7.Controls.Add(button14);
+            tabPage7.Controls.Add(comboBox7);
+            tabPage7.Controls.Add(label15);
+            tabPage7.Location = new Point(4, 29);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Size = new Size(792, 417);
+            tabPage7.TabIndex = 6;
+            tabPage7.Text = "Delete Airports";
+            // 
+            // button13
+            // 
+            button13.Location = new Point(626, 353);
+            button13.Name = "button13";
+            button13.Size = new Size(94, 29);
+            button13.TabIndex = 3;
+            button13.Text = "Log out";
+            button13.UseVisualStyleBackColor = true;
+            button13.Click += button5_Click;
+            // 
+            // button14
+            // 
+            button14.Location = new Point(289, 284);
+            button14.Name = "button14";
+            button14.Size = new Size(94, 29);
+            button14.TabIndex = 2;
+            button14.Text = "Delete";
+            button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
+            // 
+            // comboBox7
+            // 
+            comboBox7.FormattingEnabled = true;
+            comboBox7.Location = new Point(230, 69);
+            comboBox7.Name = "comboBox7";
+            comboBox7.Size = new Size(260, 28);
+            comboBox7.TabIndex = 1;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(73, 72);
+            label15.Name = "label15";
+            label15.Size = new Size(98, 20);
+            label15.TabIndex = 0;
+            label15.Text = "Select airport";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(86, 72);
+            label16.Name = "label16";
+            label16.Size = new Size(80, 20);
+            label16.TabIndex = 20;
+            label16.Text = "Select user";
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -458,6 +640,13 @@
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             tabPage4.ResumeLayout(false);
+            tabPage4.PerformLayout();
+            tabPage5.ResumeLayout(false);
+            tabPage5.PerformLayout();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -501,5 +690,21 @@
         private Button button6;
         private Button button7;
         private Button button8;
+        private TabPage tabPage5;
+        private Button button9;
+        private Button button10;
+        private ComboBox comboBox5;
+        private Label label13;
+        private TabPage tabPage6;
+        private Button button11;
+        private Button button12;
+        private ComboBox comboBox6;
+        private Label label14;
+        private TabPage tabPage7;
+        private Button button13;
+        private Button button14;
+        private ComboBox comboBox7;
+        private Label label15;
+        private Label label16;
     }
 }
