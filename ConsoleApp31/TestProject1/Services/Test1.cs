@@ -79,7 +79,8 @@ namespace TestProject1.Services
 
             await service.AddAirlineAsync(new Airline
             {
-                Name = "Lufthansa"
+                Name = "Lufthansa",
+                Country = "Germany"
             });
 
             Assert.AreEqual(1, context.Airlines.Count());
@@ -91,16 +92,25 @@ namespace TestProject1.Services
 
             var airline = new Airline
             {
-                Name = "Lufthansa"
+                Name = "Lufthansa",
+                Country = "Germany"
             };
 
             context.Airlines.Add(airline);
             await context.SaveChangesAsync();
 
             context.Flights.AddRange(
-                new Flight { AirlineId = airline.Id },
-                new Flight { AirlineId = airline.Id }
-            );
+    new Flight
+    {
+        FlightNumber = "LH100",
+        AirlineId = airline.Id
+    },
+    new Flight
+    {
+        FlightNumber = "LH200",
+        AirlineId = airline.Id
+    }
+);
 
             await context.SaveChangesAsync();
 
@@ -118,8 +128,14 @@ namespace TestProject1.Services
 
             var service = new FlightService(context);
 
+            var airline = new Airline { Name = "Test Airline", Country = "Germany" };
+            context.Airlines.Add(airline);
+            await context.SaveChangesAsync();
+
             var flight = new Flight
             {
+                AirlineId = airline.Id,
+                FlightNumber = "LH100",
                 DepartureAirportId = 1,
                 ArrivalAirportId = 2,
                 DepartureTime = DateTime.Now,
