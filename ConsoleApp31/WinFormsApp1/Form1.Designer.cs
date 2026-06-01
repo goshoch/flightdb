@@ -34,6 +34,8 @@
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             label2 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -91,12 +93,24 @@
             label2.TabIndex = 4;
             label2.Text = "Password";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.illustration_of_airplane_aircraft_airplane_drawing_vector_removebg_preview;
+            pictureBox1.Location = new Point(493, 57);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(240, 220);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DeepSkyBlue;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(textBox2);
             Controls.Add(label2);
             Controls.Add(textBox1);
@@ -106,6 +120,7 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,5 +133,6 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private Label label2;
+        private PictureBox pictureBox1;
     }
 }
