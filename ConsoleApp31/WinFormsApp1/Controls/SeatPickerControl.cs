@@ -31,7 +31,6 @@ namespace WinFormsApp1.Controls
         {
             panelSeats.Controls.Clear();
 
-            // Group seats by row number (1,2,3...)
             var groupedSeats = seats
                 .GroupBy(s =>
                     int.Parse(new string(
@@ -42,16 +41,13 @@ namespace WinFormsApp1.Controls
 
             foreach (var rowGroup in groupedSeats)
             {
-                // 🔥 First row only shows 4 seats
                 int colsInRow = rowGroup.Key == 1 ? 4 : 6;
 
                 int panelWidth = panelSeats.Width;
                 int rowWidth = colsInRow * 50;
 
-                // Center the row
                 int startX = (panelWidth - rowWidth) / 2;
 
-                // Extra spacing between cabin sections
                 int extraGap = 0;
 
                 if (visualRow >= 1)
@@ -110,8 +106,8 @@ namespace WinFormsApp1.Controls
             clicked.BackColor = Color.DodgerBlue;
 
             SelectedSeat = (Seat)clicked.Tag;
-            if(SelectedSeat.SeatNumber.StartsWith("1"))SelectedSeat.Class = TicketClass.FirstClass;
-            else if (SelectedSeat.SeatNumber.StartsWith("2") || SelectedSeat.SeatNumber.StartsWith("3")) SelectedSeat.Class = TicketClass.Business;
+            if(SelectedSeat.SeatNumber.StartsWith("1")&&SelectedSeat.SeatNumber.Length==3)SelectedSeat.Class = TicketClass.FirstClass;
+            else if (SelectedSeat.SeatNumber.StartsWith("2") || SelectedSeat.SeatNumber.StartsWith("3") && SelectedSeat.SeatNumber.Length == 3) SelectedSeat.Class = TicketClass.Business;
             else SelectedSeat.Class = TicketClass.Economy;
 
             SeatSelected?.Invoke(SelectedSeat);

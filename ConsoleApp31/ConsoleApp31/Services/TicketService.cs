@@ -17,6 +17,11 @@ namespace ConsoleApp31.Services
         {
             ticketContext = new TicketContext();
         }
+        public TicketService(TicketContext context)
+        {
+            ticketContext = context;
+
+        }
         public async Task AddTicketAsync(Ticket ticket)
         {
             bool seatTaken = await ticketContext.Tickets
@@ -93,5 +98,6 @@ namespace ConsoleApp31.Services
                 .Where(x => x.TicketClass == ticketClass)
                 .ToListAsync();
         }
+
     }
 }

@@ -18,6 +18,11 @@ namespace ConsoleApp31.Services
             ticketContext=new TicketContext();
            
         }
+        public UserService(TicketContext context)
+        {
+            ticketContext=context;
+
+        }
         public async Task<User> LogIn(string name, string password)
         {
             var user = await ticketContext.Users.FirstOrDefaultAsync(u => u.Username == name && u.Password == password);

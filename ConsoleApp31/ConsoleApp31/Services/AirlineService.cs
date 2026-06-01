@@ -16,6 +16,11 @@ namespace ConsoleApp31.Services
         {
             ticketContext = new TicketContext();
         }
+        public AirlineService(TicketContext context)
+        {
+            ticketContext = context;
+
+        }
         public async Task AddAirlineAsync(Airline airline)
         {
             await ticketContext.Airlines.AddAsync(airline);

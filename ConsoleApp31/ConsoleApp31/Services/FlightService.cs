@@ -16,6 +16,11 @@ namespace ConsoleApp31.Services
         {
             ticketContext = new TicketContext();
         }
+        public FlightService(TicketContext context)
+        {
+            ticketContext = context;
+
+        }
         public void AddFlight(Flight flight)
         {
             ticketContext.Flights.Add(flight);
