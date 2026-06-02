@@ -1,4 +1,4 @@
-﻿using ConsoleApp31.Data.Entities;
+﻿using Application.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ConsoleApp31.Enums;
+using Application.Data.Enums;
 
 namespace WinFormsApp1.Controls
 {

@@ -1,4 +1,4 @@
-﻿using ConsoleApp31.Data.Entities;
+﻿using Application.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,10 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using ConsoleApp31.Data;
-using ConsoleApp31.Data.Entities;
-using ConsoleApp31.Enums;
-using ConsoleApp31.Services;
+using Application.Data;
+using Application.Data.Enums;
+using Application.Services;
 
 namespace WinFormsApp1
 {

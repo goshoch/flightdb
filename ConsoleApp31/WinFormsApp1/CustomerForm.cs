@@ -1,6 +1,6 @@
-﻿using ConsoleApp31.Data;
-using ConsoleApp31.Data.Entities;
-using ConsoleApp31.Services;
+﻿using Application.Data;
+using Application.Data.Entities;
+using Application.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

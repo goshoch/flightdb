@@ -1,4 +1,4 @@
-﻿using ConsoleApp31.Data;
+﻿using Application.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

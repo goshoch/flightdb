@@ -1,9 +1,9 @@
-using ConsoleApp31.Data.Entities;
-using ConsoleApp31.Data;
+using Application.Data.Entities;
+using Application.Data;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
-using ConsoleApp31.Services;
-using ConsoleApp31.Enums;
+using Application.Services;
+using Application.Data.Enums;
 
 namespace WinFormsApp1
 {

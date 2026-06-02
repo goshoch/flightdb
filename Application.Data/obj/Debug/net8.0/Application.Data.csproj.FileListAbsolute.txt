@@ -1,0 +1,15 @@
+C:\Users\11B_24\source\repos\flightdb\Application.Data\bin\Debug\net8.0\Application.Data.deps.json
+C:\Users\11B_24\source\repos\flightdb\Application.Data\bin\Debug\net8.0\Application.Data.runtimeconfig.json
+C:\Users\11B_24\source\repos\flightdb\Application.Data\bin\Debug\net8.0\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Data\bin\Debug\net8.0\Application.Data.pdb
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.csproj.AssemblyReference.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.AssemblyInfoInputs.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.AssemblyInfo.cs
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.csproj.CoreCompileInputs.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.sourcelink.json
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\refint\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.pdb
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\Application.Data.genruntimeconfig.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Data\obj\Debug\net8.0\ref\Application.Data.dll

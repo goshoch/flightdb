@@ -328,3 +328,7 @@ C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\obj\Debug\net8.0
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\obj\Debug\net8.0\TestProject1.pdb
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\obj\Debug\net8.0\TestProject1.genruntimeconfig.cache
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\obj\Debug\net8.0\ref\TestProject1.dll
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\bin\Debug\net8.0\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\bin\Debug\net8.0\Application.Services.dll
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\bin\Debug\net8.0\Application.Data.pdb
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\TestProject1\bin\Debug\net8.0\Application.Services.pdb

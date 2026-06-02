@@ -28,4 +28,9 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application.Services\Application.Services.csproj" />
+    <ProjectReference Include="..\..\Application.Data\Application.Data.csproj" />
+  </ItemGroup>
+
 </Project>

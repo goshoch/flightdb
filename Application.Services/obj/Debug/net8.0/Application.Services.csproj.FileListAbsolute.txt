@@ -1,0 +1,16 @@
+C:\Users\11B_24\source\repos\flightdb\Application.Services\bin\Debug\net8.0\Application.Services.deps.json
+C:\Users\11B_24\source\repos\flightdb\Application.Services\bin\Debug\net8.0\Application.Services.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Services\bin\Debug\net8.0\Application.Services.pdb
+C:\Users\11B_24\source\repos\flightdb\Application.Services\bin\Debug\net8.0\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Services\bin\Debug\net8.0\Application.Data.pdb
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.csproj.AssemblyReference.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.AssemblyInfoInputs.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.AssemblyInfo.cs
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.csproj.CoreCompileInputs.cache
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.sourcelink.json
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Applicat.658EF3A6.Up2Date
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\refint\Application.Services.dll
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\Application.Services.pdb
+C:\Users\11B_24\source\repos\flightdb\Application.Services\obj\Debug\net8.0\ref\Application.Services.dll

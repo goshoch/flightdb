@@ -28,6 +28,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ConsoleApp31\ConsoleApp31.csproj" />
+    <ProjectReference Include="..\..\Application.Data\Application.Data.csproj" />
+    <ProjectReference Include="..\..\Application.Services\Application.Services.csproj" />
   </ItemGroup>
 
 </Project>

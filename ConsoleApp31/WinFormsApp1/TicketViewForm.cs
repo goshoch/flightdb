@@ -1,6 +1,6 @@
-﻿using ConsoleApp31.Data.Entities;
-using ConsoleApp31.Enums;
-using ConsoleApp31.Services;
+﻿using Application.Data.Entities;
+using Application.Data.Enums;
+using Application.Services;
 using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;

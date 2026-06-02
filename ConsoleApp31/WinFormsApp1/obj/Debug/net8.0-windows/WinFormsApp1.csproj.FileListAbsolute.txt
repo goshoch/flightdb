@@ -306,4 +306,8 @@ C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Properties.Resources.resources
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Application.Data.dll
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Application.Services.dll
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Application.Services.pdb
+C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\Application.Data.pdb
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\System.Formats.Asn1.dll
