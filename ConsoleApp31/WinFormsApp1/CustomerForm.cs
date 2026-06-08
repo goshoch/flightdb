@@ -16,21 +16,26 @@ namespace WinFormsApp1
 {
     public partial class CustomerForm : Form
     {
-        private readonly TicketService ticketService=new TicketService();
-        private readonly FlightService flightService=new FlightService();
-        private readonly TicketContext context=new TicketContext();
+        private readonly TicketService ticketService;
+        private readonly FlightService flightService;
+        private readonly TicketContext context;
         private User currentUser;
-        private List<Ticket> ticketlist;
         private List<Flight> flightlist;
         public CustomerForm(User user)
         {
             InitializeComponent();
             context = new TicketContext();
-            ticketService = new TicketService();
+            ticketService = new TicketService(context);
+            flightService = new FlightService(context);
             currentUser = user;
         }
 
         private async void CustomerForm_Load(object sender, EventArgs e)
+        {
+            await LoadFlightsAsync();
+        }
+
+        private async Task LoadFlightsAsync()
         {
             flightlist = await flightService.GetFlightsAsync();
             dataGridView1.DataSource = flightlist.Select(p => new
@@ -43,15 +48,21 @@ namespace WinFormsApp1
                 Airline = p.Airline.Name,
                 p.Price
             }).ToList();
-            dataGridView1.Columns["Id"].Visible = false;
-            var addToCartButtonColumn = new DataGridViewButtonColumn();
-            addToCartButtonColumn.Name = "addToCartButtonColumn";
-            addToCartButtonColumn.HeaderText = "Add to Cart";
-            addToCartButtonColumn.Text = "Add to Cart";
-            addToCartButtonColumn.UseColumnTextForButtonValue = true;
-            dataGridView1.Columns.Add(addToCartButtonColumn);
-        }
+            if (dataGridView1.Columns["Id"] != null)
+            {
+                dataGridView1.Columns["Id"].Visible = false;
+            }
 
+            if (!dataGridView1.Columns.Contains("addToCartButtonColumn"))
+            {
+                var addToCartButtonColumn = new DataGridViewButtonColumn();
+                addToCartButtonColumn.Name = "addToCartButtonColumn";
+                addToCartButtonColumn.HeaderText = "Add to Cart";
+                addToCartButtonColumn.Text = "Add to Cart";
+                addToCartButtonColumn.UseColumnTextForButtonValue = true;
+                dataGridView1.Columns.Add(addToCartButtonColumn);
+            }
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -62,23 +73,26 @@ namespace WinFormsApp1
             this.Hide();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            TicketViewForm form= new TicketViewForm(currentUser);
-            form.Show();
+            TicketViewForm form = new TicketViewForm(currentUser, context);
+            form.ShowDialog();
+            await LoadFlightsAsync();
         }
 
         private async void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == dataGridView1.Columns["addToCartButtonColumn"].Index && e.RowIndex >= 0)
             {
+                flightlist = await flightService.GetFlightsAsync();
                 var flightId = (int)dataGridView1.Rows[e.RowIndex].Cells["Id"].Value;
                 var flight = flightlist.First(p => p.Id == flightId);
-                List<string> takenseats= flight.Tickets.Select(x=>x.SeatNumber).ToList();
-               
-                TicketPurchaseForm form = new TicketPurchaseForm(flight,currentUser);
+                List<string> takenseats = flight.Tickets.Select(x => x.SeatNumber).ToList();
+
+                TicketPurchaseForm form = new TicketPurchaseForm(flight, currentUser, context);
                 form.ShowDialog();
-                
+                await LoadFlightsAsync();
+
             }
         }
     }

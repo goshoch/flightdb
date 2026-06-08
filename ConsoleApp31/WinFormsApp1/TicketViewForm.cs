@@ -1,4 +1,5 @@
-﻿using Application.Data.Entities;
+using Application.Data;
+using Application.Data.Entities;
 using Application.Data.Enums;
 using Application.Services;
 using Microsoft.VisualBasic.Logging;
@@ -16,17 +17,21 @@ namespace WinFormsApp1
 {
     public partial class TicketViewForm : Form
     {
-        private TicketService ticketService = new TicketService();
+        private TicketService ticketService;
         private User User { get; set; }
+        private List<Ticket> tickets;
+        private TicketContext context;
         public TicketViewForm()
         {
             InitializeComponent();
 
         }
-        public TicketViewForm(User user)
+        public TicketViewForm(User user, TicketContext dbContext)
         {
             InitializeComponent();
             User = user;
+            context = dbContext;
+            ticketService = new TicketService(context);
             dataGridView1.Columns.Add("FlightNumber", "Flight");
             dataGridView1.Columns.Add("From", "From");
             dataGridView1.Columns.Add("To", "To");
@@ -38,7 +43,7 @@ namespace WinFormsApp1
         }
         private async void LoadTickets()
         {
-            var tickets = await ticketService.GetTicketsByUserIdAsync(User.Id);
+            tickets = await ticketService.GetTicketsByUserIdAsync(User.Id);
 
             dataGridView1.Rows.Clear();
 
@@ -62,6 +67,28 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private async void button2_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Please select a ticket to cancel.");
+                return;
+            }
+
+            var selectedRow = dataGridView1.SelectedRows[0];
+            var ticket = tickets[selectedRow.Index];
+
+            var confirmResult = MessageBox.Show("Are you sure you want to cancel this ticket?",
+                                     "Confirm Cancellation",
+                                     MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                await ticketService.RemoveTicketAsync(ticket.Id);
+                MessageBox.Show("Ticket cancelled successfully!");
+                LoadTickets();
+            }
         }
     }
 }

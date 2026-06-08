@@ -1,4 +1,5 @@
-﻿using Application.Data.Entities;
+﻿using Application.Data;
+using Application.Data.Entities;
 using Application.Data.Enums;
 using Application.Services;
 using System;
@@ -15,19 +16,24 @@ namespace WinFormsApp1
 {
     public partial class TicketPurchaseForm : Form
     {
-        private readonly SeatService seatService=new SeatService();
+        private readonly SeatService seatService;
         public Flight Flight { get; set; }
         public User Customer { get; set; }
-        private readonly TicketService ticketService = new TicketService();
+        private readonly TicketService ticketService;
+        private readonly TicketContext context;
+
         public TicketPurchaseForm()
         {
             InitializeComponent();
         }
-        public TicketPurchaseForm(Flight flight, User user)
+        public TicketPurchaseForm(Flight flight, User user, TicketContext dbContext)
         {
             InitializeComponent();
             Flight = flight;
             Customer = user;
+            context = dbContext;
+            seatService = new SeatService();
+            ticketService = new TicketService(context);
             List<string> takenseats = flight.Tickets.Select(x => x.SeatNumber).ToList();
             var seats = seatService.GenerateSeats(
         10,
@@ -70,11 +76,18 @@ namespace WinFormsApp1
             else if (ticket.TicketClass == TicketClass.Business) ticket.Price *= 1.5m;
 
             ticketService.AddTicketAsync(ticket);
+            MessageBox.Show("Ticket booked successfully!");
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void seatPickerControl1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
