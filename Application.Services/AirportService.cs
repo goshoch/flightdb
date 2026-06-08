@@ -23,6 +23,8 @@ namespace Application.Services
         }
         public async Task AddAirportAsync(Airport airport)
         {
+            var airports = await GetAirportsAsync();
+            if (airports.Any(x => x.Name == airport.Name)) throw new ArgumentException("Airport already exists.");
             await ticketContext.Airports.AddAsync(airport);
             await ticketContext.SaveChangesAsync();
         }
