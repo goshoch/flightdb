@@ -37,10 +37,7 @@ namespace Application.Services
 
         public async Task<List<Ticket>> GetTicketsAsync()
         {
-            var tickets = await ticketContext.Tickets
-                .Include(x => x.User)
-                .Include(x => x.Flight)
-                .ToListAsync();
+            var tickets = await ticketContext.Tickets.ToListAsync();
 
             if (tickets.Count == 0)
                 throw new ArgumentException("List is empty");
@@ -51,8 +48,6 @@ namespace Application.Services
         public async Task<Ticket> GetTicketAsync(int id)
         {
             var ticket = await ticketContext.Tickets
-                .Include(x => x.User)
-                .Include(x => x.Flight)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             if (ticket == null)
