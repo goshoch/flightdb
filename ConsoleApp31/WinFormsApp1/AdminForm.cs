@@ -135,7 +135,14 @@ namespace WinFormsApp1
                 return;
             }
             Airport airport = new Airport() { Name = textBox5.Text, City = textBox6.Text, Country = textBox7.Text };
-            await airportService.AddAirportAsync(airport);
+            try
+            {
+                await airportService.AddAirportAsync(airport);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             MessageBox.Show("Airport added!");
             textBox5.Clear(); textBox6.Clear(); textBox7.Clear();
             await RefreshAirportsAsync();
@@ -246,6 +253,11 @@ namespace WinFormsApp1
             MessageBox.Show("Airport deleted successfully");
             await RefreshAirportsAsync();
             await RefreshFlightsAsync();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

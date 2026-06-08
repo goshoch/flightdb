@@ -121,7 +121,6 @@ C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\bin\Debug\net8.0-windows\ConsoleApp31.pdb
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.csproj.AssemblyReference.cache
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.AdminForm.resources
-C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.CartForm.resources
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Controls.SeatPickerControl.resources
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.CustomerForm.resources
 C:\Users\11B_24\source\repos\flightdb\ConsoleApp31\WinFormsApp1\obj\Debug\net8.0-windows\WinFormsApp1.Form1.resources

@@ -37,7 +37,14 @@ namespace WinFormsApp1
 
         private async Task LoadFlightsAsync()
         {
-            flightlist = await flightService.GetFlightsAsync();
+            try
+            {
+                flightlist = await flightService.GetFlightsAsync();
+            }
+            catch (Exception ex)
+            {
+                return;
+            }
             dataGridView1.DataSource = flightlist.Select(p => new
             {
                 p.Id,
@@ -94,6 +101,11 @@ namespace WinFormsApp1
                 await LoadFlightsAsync();
 
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

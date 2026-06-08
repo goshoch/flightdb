@@ -1,4 +1,4 @@
-﻿using Application.Data.Entities;
+using Application.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,7 +44,7 @@ namespace WinFormsApp1.Controls
                 int colsInRow = rowGroup.Key == 1 ? 4 : 6;
 
                 int panelWidth = panelSeats.Width;
-                int rowWidth = colsInRow * 50;
+                int rowWidth = colsInRow * 70; // Wider gap between columns
 
                 int startX = (panelWidth - rowWidth) / 2;
 
@@ -62,14 +62,21 @@ namespace WinFormsApp1.Controls
                 {
                     Button btn = new Button();
 
-                    btn.Width = 45;
-                    btn.Height = 45;
+                    btn.Width = 60; // Set button width
+                    btn.Height = 60; // Set button height
+                    // Removed explicit font setting to revert to default/larger font
 
                     btn.Text = seat.SeatNumber;
                     btn.Tag = seat;
 
-                    btn.Left = startX + (col * 50);
-                    btn.Top = 20 + (visualRow * 50) + extraGap;
+                    int middleGap = 0;
+                    if (colsInRow == 6 && col >= 3) // Add extra gap after 3rd column for 6-column rows
+                    {
+                        middleGap = 20; // Additional space for middle gap
+                    }
+
+                    btn.Left = startX + (col * 70) + middleGap; // Wider gap between columns
+                    btn.Top = 20 + (visualRow * 70) + extraGap; // Wider gap between rows
 
                     if (seat.IsTaken)
                     {
@@ -119,4 +126,3 @@ namespace WinFormsApp1.Controls
         }
     }
 }
-
