@@ -21,11 +21,6 @@ namespace Application.Services
             ticketContext = context;
 
         }
-        public void AddFlight(Flight flight)
-        {
-            ticketContext.Flights.Add(flight);
-            ticketContext.SaveChanges();
-        }
         public async Task AddFlightAsync(Flight flight)
         {
             if (flight.ArrivalTime < flight.DepartureTime) { throw new ArgumentException("Arrival time cannot be before departure time"); }
@@ -61,43 +56,6 @@ namespace Application.Services
 
             ticketContext.Flights.Remove(flight);
             await ticketContext.SaveChangesAsync();
-        }
-
-        public async Task<List<Flight>> GetFlightsFromCityAfterDateAsync(string city, DateTime date)
-        {
-            return await ticketContext.Flights
-                .Include(x => x.DepartureAirport)
-                .Where(x => x.DepartureAirport.City == city &&
-                            x.DepartureTime > date)
-                .ToListAsync();
-        }
-
-        public async Task<List<Flight>> GetFlightsToCityAfterDateAsync(string city, DateTime date)
-        {
-            return await ticketContext.Flights
-                .Include(x => x.ArrivalAirport)
-                .Where(x => x.ArrivalAirport.City == city &&
-                            x.ArrivalTime > date)
-                .ToListAsync();
-        }
-
-        public async Task<List<Flight>> GetFlightsByAirlineAsync(int airlineId)
-        {
-            return await ticketContext.Flights
-                .Where(x => x.AirlineId == airlineId)
-                .ToListAsync();
-        }
-
-        public async Task<Flight> GetMostExpensiveFlightAsync()
-        {
-            var flight = await ticketContext.Flights
-                .OrderByDescending(x => x.Price)
-                .FirstOrDefaultAsync();
-
-            if (flight == null)
-                throw new ArgumentException("List is empty");
-
-            return flight;
         }
     }
 }

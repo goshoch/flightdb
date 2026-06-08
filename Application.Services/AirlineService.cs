@@ -66,26 +66,5 @@ namespace Application.Services
 
             return airline.Flights.Count;
         }
-
-        public async Task<Airline> GetAirlineWithMostFlightsAsync()
-        {
-            var airline = await ticketContext.Airlines
-                .Include(x => x.Flights)
-                .OrderByDescending(x => x.Flights.Count)
-                .FirstOrDefaultAsync();
-
-            if (airline == null)
-                throw new ArgumentException("List is empty");
-
-            return airline;
-        }
-
-        public async Task<List<Flight>> GetFlightsByAirlineAfterDateAsync(int airlineId, DateTime date)
-        {
-            return await ticketContext.Flights
-                .Where(x => x.AirlineId == airlineId &&
-                            x.DepartureTime > date)
-                .ToListAsync();
-        }
     }
 }

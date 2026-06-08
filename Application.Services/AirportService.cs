@@ -54,32 +54,5 @@ namespace Application.Services
             ticketContext.Airports.Remove(airport);
             await ticketContext.SaveChangesAsync();
         }
-
-        public async Task<Airport> GetAirportByCityAsync(string city)
-        {
-            var airport = await ticketContext.Airports
-                .FirstOrDefaultAsync(x => x.City == city);
-
-            if (airport == null)
-                throw new ArgumentException("No such airport");
-
-            return airport;
-        }
-
-        public async Task<List<Flight>> GetDepartingFlightsAsync(int airportId)
-        {
-            return await ticketContext.Flights
-                .Include(x => x.DepartureAirport)
-                .Where(x => x.DepartureAirport.Id == airportId)
-                .ToListAsync();
-        }
-
-        public async Task<List<Flight>> GetArrivingFlightsAsync(int airportId)
-        {
-            return await ticketContext.Flights
-                .Include(x => x.ArrivalAirport)
-                .Where(x => x.ArrivalAirport.Id == airportId)
-                .ToListAsync();
-        }
     }
 }

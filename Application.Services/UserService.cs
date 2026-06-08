@@ -73,31 +73,5 @@ namespace Application.Services
             ticketContext.Users.Remove(User);
             await ticketContext.SaveChangesAsync();
         }
-
-        public async Task<int> GetFlightsCountByUserAsync(int id)
-        {
-            var User = await ticketContext.Users
-                .Include(x => x.Tickets)
-                .FirstOrDefaultAsync(x => x.Id == id);
-
-            if (User == null)
-                throw new ArgumentException("No such User");
-
-            return User.Tickets.Count;
-        }
-
-        public async Task<int> GetFlightsCountByUserForAirlineAsync(int UserId, int airlineId)
-        {
-            var User = await ticketContext.Users
-                .Include(x => x.Tickets)
-                .ThenInclude(x => x.Flight)
-                .FirstOrDefaultAsync(x => x.Id == UserId);
-
-            if (User == null)
-                throw new ArgumentException("No such User");
-
-            return User.Tickets
-                .Count(x => x.Flight.AirlineId == airlineId);
-        }
     }
 }

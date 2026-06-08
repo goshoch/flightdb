@@ -80,24 +80,5 @@ namespace Application.Services
                 .Where(x => x.UserId == id)
                 .ToListAsync();
         }
-
-        public async Task<List<Ticket>> GetTicketsByFlightIdAsync(int id)
-        {
-            return await ticketContext.Tickets
-                .Include(x => x.User)
-                .Include(x => x.Flight)
-                .Where(x => x.FlightId == id)
-                .ToListAsync();
-        }
-
-        public async Task<List<Ticket>> GetTicketsByClassAsync(TicketClass ticketClass)
-        {
-            return await ticketContext.Tickets
-                .Include(x => x.User)
-                .Include(x => x.Flight)
-                .Where(x => x.TicketClass == ticketClass)
-                .ToListAsync();
-        }
-
     }
 }
