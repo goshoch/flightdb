@@ -63,6 +63,7 @@
             textBox6 = new TextBox();
             label11 = new Label();
             tabPage4 = new TabPage();
+            label16 = new Label();
             button8 = new Button();
             button4 = new Button();
             comboBox4 = new ComboBox();
@@ -81,7 +82,6 @@
             button14 = new Button();
             comboBox7 = new ComboBox();
             label15 = new Label();
-            label16 = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -132,7 +132,7 @@
             tabPage1.Padding = new Padding(3);
             tabPage1.Size = new Size(792, 417);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Flights";
+            tabPage1.Text = "Add Flights";
             // 
             // button5
             // 
@@ -284,7 +284,7 @@
             tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(792, 417);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "Airlines";
+            tabPage2.Text = "Add Airlines";
             // 
             // button6
             // 
@@ -353,7 +353,7 @@
             tabPage3.Name = "tabPage3";
             tabPage3.Size = new Size(792, 417);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "Airports";
+            tabPage3.Text = "Add Airports";
             // 
             // button7
             // 
@@ -434,7 +434,16 @@
             tabPage4.Name = "tabPage4";
             tabPage4.Size = new Size(792, 417);
             tabPage4.TabIndex = 3;
-            tabPage4.Text = "Users";
+            tabPage4.Text = "Delete Users";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(86, 72);
+            label16.Name = "label16";
+            label16.Size = new Size(80, 20);
+            label16.TabIndex = 20;
+            label16.Text = "Select user";
             // 
             // button8
             // 
@@ -613,15 +622,6 @@
             label15.Size = new Size(98, 20);
             label15.TabIndex = 0;
             label15.Text = "Select airport";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(86, 72);
-            label16.Name = "label16";
-            label16.Size = new Size(80, 20);
-            label16.TabIndex = 20;
-            label16.Text = "Select user";
             // 
             // AdminForm
             // 

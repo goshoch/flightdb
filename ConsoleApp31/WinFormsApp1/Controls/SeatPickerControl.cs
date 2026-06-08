@@ -106,8 +106,8 @@ namespace WinFormsApp1.Controls
             clicked.BackColor = Color.DodgerBlue;
 
             SelectedSeat = (Seat)clicked.Tag;
-            if(SelectedSeat.SeatNumber.StartsWith("1")&&SelectedSeat.SeatNumber.Length==3)SelectedSeat.Class = TicketClass.FirstClass;
-            else if (SelectedSeat.SeatNumber.StartsWith("2") || SelectedSeat.SeatNumber.StartsWith("3") && SelectedSeat.SeatNumber.Length == 3) SelectedSeat.Class = TicketClass.Business;
+            if(SelectedSeat.SeatNumber.StartsWith("1")&&SelectedSeat.SeatNumber.Length==2)SelectedSeat.Class = TicketClass.FirstClass;
+            else if ((SelectedSeat.SeatNumber.StartsWith("2") || SelectedSeat.SeatNumber.StartsWith("3")) && SelectedSeat.SeatNumber.Length == 2) SelectedSeat.Class = TicketClass.Business;
             else SelectedSeat.Class = TicketClass.Economy;
 
             SeatSelected?.Invoke(SelectedSeat);

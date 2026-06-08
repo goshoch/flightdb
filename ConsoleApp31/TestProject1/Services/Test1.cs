@@ -1,4 +1,4 @@
-﻿using Application.Data;
+using Application.Data;
 using Application.Data.Entities;
 using Application.Data.Enums;
 using Application.Services;
@@ -72,6 +72,32 @@ namespace TestProject1.Services
             Assert.AreEqual("john", result.Username);
         }
         [Test]
+        public async Task GetUsersAsync_ShouldReturnAllUsers()
+        {
+            using var context = new TicketContext(_options);
+            var service = new UserService(context);
+            await service.AddUserAsync(new User { Username = "user1", Password = "password" });
+            await service.AddUserAsync(new User { Username = "user2", Password = "password" });
+
+            var users = await service.GetUsersAsync();
+
+            Assert.AreEqual(2, users.Count);
+        }
+
+        [Test]
+        public async Task GetUserAsync_ShouldReturnCorrectUser()
+        {
+            using var context = new TicketContext(_options);
+            var service = new UserService(context);
+            var user = new User { Username = "user1", Password = "password" };
+            await service.AddUserAsync(user);
+
+            var result = await service.GetUserAsync(user.Id);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("user1", result.Username);
+        }
+        [Test]
         public async Task AddAirlineAsync_ShouldAddAirline()
         {
             using var context = new TicketContext(_options);
@@ -84,6 +110,18 @@ namespace TestProject1.Services
             });
 
             Assert.AreEqual(1, context.Airlines.Count());
+        }
+        [Test]
+        public async Task GetAirlinesAsync_ShouldReturnAllAirlines()
+        {
+            using var context = new TicketContext(_options);
+            var service = new AirlineService(context);
+            await service.AddAirlineAsync(new Airline { Name = "Lufthansa", Country = "Germany" });
+            await service.AddAirlineAsync(new Airline { Name = "Turkish Airlines", Country = "Turkey" });
+
+            var airlines = await service.GetAirlinesAsync();
+
+            Assert.AreEqual(2, airlines.Count);
         }
         [Test]
         public async Task GetFlightsCountByAirlineAsync_ShouldReturnCorrectCount()
@@ -132,12 +170,17 @@ namespace TestProject1.Services
             context.Airlines.Add(airline);
             await context.SaveChangesAsync();
 
+            var airport1 = new Airport { Name = "Test Airport 1", City = "Test City 1", Country = "Test Country 1" };
+            var airport2 = new Airport { Name = "Test Airport 2", City = "Test City 2", Country = "Test Country 2" };
+            context.Airports.AddRange(airport1, airport2);
+            await context.SaveChangesAsync();
+
             var flight = new Flight
             {
                 AirlineId = airline.Id,
                 FlightNumber = "LH100",
-                DepartureAirportId = 1,
-                ArrivalAirportId = 2,
+                DepartureAirportId = airport1.Id,
+                ArrivalAirportId = airport2.Id,
                 DepartureTime = DateTime.Now,
                 ArrivalTime = DateTime.Now.AddHours(2),
                 Price = 100
@@ -146,6 +189,50 @@ namespace TestProject1.Services
             await service.AddFlightAsync(flight);
 
             Assert.AreEqual(1, context.Flights.Count());
+        }
+        [Test]
+        public async Task GetFlightsAsync_ShouldReturnAllFlights()
+        {
+            using var context = new TicketContext(_options);
+            var service = new FlightService(context);
+            var airline = new Airline { Name = "Test Airline", Country = "Germany" };
+            context.Airlines.Add(airline);
+            await context.SaveChangesAsync();
+
+            var airport1 = new Airport { Name = "Test Airport 1", City = "Test City 1", Country = "Test Country 1" };
+            var airport2 = new Airport { Name = "Test Airport 2", City = "Test City 2", Country = "Test Country 2" };
+            context.Airports.AddRange(airport1, airport2);
+            await context.SaveChangesAsync();
+
+            await service.AddFlightAsync(new Flight { AirlineId = airline.Id, FlightNumber = "LH100", DepartureAirportId = airport1.Id, ArrivalAirportId = airport2.Id, DepartureTime = DateTime.Now, ArrivalTime = DateTime.Now.AddHours(2), Price = 100 });
+            await service.AddFlightAsync(new Flight { AirlineId = airline.Id, FlightNumber = "LH200", DepartureAirportId = airport1.Id, ArrivalAirportId = airport2.Id, DepartureTime = DateTime.Now, ArrivalTime = DateTime.Now.AddHours(2), Price = 200 });
+
+            var flights = await service.GetFlightsAsync();
+
+            Assert.AreEqual(2, flights.Count);
+        }
+
+        [Test]
+        public async Task GetFlightAsync_ShouldReturnCorrectFlight()
+        {
+            using var context = new TicketContext(_options);
+            var service = new FlightService(context);
+            var airline = new Airline { Name = "Test Airline", Country = "Germany" };
+            context.Airlines.Add(airline);
+            await context.SaveChangesAsync();
+
+            var airport1 = new Airport { Name = "Test Airport 1", City = "Test City 1", Country = "Test Country 1" };
+            var airport2 = new Airport { Name = "Test Airport 2", City = "Test City 2", Country = "Test Country 2" };
+            context.Airports.AddRange(airport1, airport2);
+            await context.SaveChangesAsync();
+
+            var flight = new Flight { AirlineId = airline.Id, FlightNumber = "LH100", DepartureAirportId = airport1.Id, ArrivalAirportId = airport2.Id, DepartureTime = DateTime.Now, ArrivalTime = DateTime.Now.AddHours(2), Price = 100 };
+            await service.AddFlightAsync(flight);
+
+            var result = await service.GetFlightAsync(flight.Id);
+
+            Assert.IsNotNull(result);
+            Assert.AreEqual("LH100", result.FlightNumber);
         }
         [Test]
         public async Task AddTicketAsync_ShouldAddTicket()

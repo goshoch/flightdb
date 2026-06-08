@@ -1,4 +1,4 @@
-﻿namespace WinFormsApp1
+namespace WinFormsApp1
 {
     partial class TicketViewForm
     {
@@ -30,6 +30,7 @@
         {
             dataGridView1 = new DataGridView();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -55,12 +56,23 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button2
+            // 
+            button2.Location = new Point(586, 419);
+            button2.Name = "button2";
+            button2.Size = new Size(94, 29);
+            button2.TabIndex = 2;
+            button2.Text = "Cancel Ticket";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // TicketViewForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSkyBlue;
             ClientSize = new Size(792, 460);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Name = "TicketViewForm";
@@ -74,5 +86,6 @@
 
         private DataGridView dataGridView1;
         private Button button1;
+        private Button button2;
     }
 }

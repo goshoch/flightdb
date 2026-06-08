@@ -43,6 +43,7 @@
             seatPickerControl1.Name = "seatPickerControl1";
             seatPickerControl1.Size = new Size(800, 450);
             seatPickerControl1.TabIndex = 0;
+            seatPickerControl1.Load += seatPickerControl1_Load;
             // 
             // labelSelectedSeat
             // 

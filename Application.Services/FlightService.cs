@@ -31,7 +31,7 @@ namespace Application.Services
 
         public async Task<List<Flight>> GetFlightsAsync()
         {
-            var flights = await ticketContext.Flights.ToListAsync();
+            var flights = await ticketContext.Flights.Include(x=>x.Airline).Include(x=>x.DepartureAirport).Include(x=>x.ArrivalAirport).Include(x=>x.Tickets).ToListAsync();
 
             if (flights.Count == 0)
                 throw new ArgumentException("List is empty");
