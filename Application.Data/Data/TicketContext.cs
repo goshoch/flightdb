@@ -36,7 +36,7 @@ namespace Application.Data
                     .Build();
 
                 var connectionString = configuration.GetConnectionString("DefaultConnection");
-                optionsBuilder.UseSqlServer(connectionString);
+                optionsBuilder.UseSqlServer(connectionString, b => b.MigrationsAssembly("Application.Data"));
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
