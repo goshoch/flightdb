@@ -29,8 +29,8 @@ namespace WinFormsApp1
         private async void button1_Click(object sender, EventArgs e)
         {
             var userService = new UserService();
-            var user =await userService.LogIn(textBox1.Text, textBox2.Text);
-            if (user==null )
+            var user = await userService.LogIn(textBox1.Text, textBox2.Text);
+            if (user == null)
             {
                 MessageBox.Show("Invalid credentials!"); return;
             }
@@ -44,12 +44,20 @@ namespace WinFormsApp1
                 CustomerForm form4 = new CustomerForm(user);
                 form4.Show();
             }
-            textBox1.Clear();textBox2.Clear();
+            textBox1.Clear(); textBox2.Clear();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyData==Keys.Enter)
+            {
+                button1_Click(sender,e);
+            }
         }
     }
 }

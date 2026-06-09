@@ -61,7 +61,7 @@ namespace WinFormsApp1
             button2.BackColor = Color.FromArgb(108, 117, 125);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Segoe UI", 12F);
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(180, 290);
             button2.Name = "button2";
@@ -103,6 +103,7 @@ namespace WinFormsApp1
             textBox2.Size = new Size(260, 34);
             textBox2.TabIndex = 2;
             textBox2.UseSystemPasswordChar = true;
+            textBox2.KeyDown += textBox2_KeyDown;
             // 
             // label2
             // 
